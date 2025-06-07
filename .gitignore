@@ -1,0 +1,24 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.log
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+
+# Others
+*.VC.db
+*.VC.opendb
+ipch/
+*.pch
+*.tlog/
+*.lastbuildstate
