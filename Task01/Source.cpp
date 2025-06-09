@@ -1,5 +1,5 @@
 #include <iostream>
-#include <windows.h>  // for Sleep
+#include <windows.h>  
 using namespace std;
 
 const int ROWS = 20;
@@ -11,10 +11,10 @@ void print_grid(int currentRow, int currentCol, int endRow, int endCol) {
     for (int row = 0; row < ROWS; row++) {
         for (int col = 0; col < COLS; col++) {
             if (row == currentRow && col == currentCol) {
-                cout << "A"; // current position
+                cout << "A"; 
             }
             else if (row == endRow && col == endCol) {
-                cout << "B"; // destination
+                cout << "B"; 
             }
             else {
                 cout << ".";
@@ -32,7 +32,7 @@ int main() {
     cout << "Enter END position (row and column, 1-based): ";
     cin >> endRow >> endCol;
 
-    // Convert to 0-based indexing
+    
     startRow--; startCol--;
     endRow--; endCol--;
 
@@ -50,7 +50,7 @@ int main() {
         else if (currentCol > endCol) currentCol--;
     }
 
-    // Final display at destination
+    
     print_grid(currentRow, currentCol, endRow, endCol);
     cout << "\nReached destination!\n";
 

@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <vector>
 #include <queue>
-#include <windows.h> // for Sleep
+#include <windows.h> 
 #include <climits>
 
 using namespace std;
@@ -17,13 +17,13 @@ struct Cell {
     }
 };
 
-// Grid representation
+
 char grid[ROWS][COLS];
 int dist[ROWS][COLS];
 bool visited[ROWS][COLS];
 pair<int, int> prev_cell[ROWS][COLS];
 
-// Direction vectors (up, down, left, right)
+
 int dRow[] = { -1, 1, 0, 0 };
 int dCol[] = { 0, 0, -1, 1 };
 
@@ -40,7 +40,7 @@ void initialize_grid() {
             prev_cell[r][c] = { -1, -1 };
         }
 
-    // Hardcoded walls (example)
+    
     for (int r = 5; r <= 15; r++)
         grid[r][20] = '#';
 }
@@ -50,17 +50,17 @@ void print_grid(int currentRow = -1, int currentCol = -1, int startRow = -1, int
     for (int r = 0; r < ROWS; r++) {
         for (int c = 0; c < COLS; c++) {
             if (r == startRow && c == startCol)
-                cout << "A";           // Start (fixed)
+                cout << "A";           
             else if (r == endRow && c == endCol)
-                cout << "B";           // End (fixed)
+                cout << "B";           
             else if (r == currentRow && c == currentCol)
-                cout << "a";           // Current exploring node
+                cout << "a";           
             else
-                cout << grid[r][c];    // Wall, path, or empty
+                cout << grid[r][c];    
         }
         cout << endl;
     }
-    Sleep(10); // Short delay for animation
+    Sleep(10); 
 }
 
 
@@ -95,7 +95,7 @@ void dijkstra(int startRow, int startCol, int endRow, int endCol) {
         print_grid(current.row, current.col, startRow, startCol, endRow, endCol);
     }
 
-    // Reconstruct path
+  
     int r = endRow, c = endCol;
     while (prev_cell[r][c].first != -1) {
         auto [pr, pc] = prev_cell[r][c];
@@ -117,7 +117,7 @@ pair<int, int> get_position(const string& label) {
             break;
         cout << "Invalid position. Please enter values within grid range.\n";
     }
-    return { row - 1, col - 1 };  // convert to 0-based
+    return { row - 1, col - 1 };  
 }
 
 int main() {
