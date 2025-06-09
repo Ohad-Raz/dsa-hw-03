@@ -51,13 +51,13 @@ void print_grid(int currentRow = -1, int currentCol = -1, int startRow = -1, int
 	for (int r = 0; r < ROWS; r++) {
 		for (int c = 0; c < COLS; c++) {
 			if (r == startRow && c == startCol)
-				cout << "A"; // Fixed start point
+				cout << "A"; 
 			else if (r == endRow && c == endCol)
-				cout << "B"; // Fixed end point
+				cout << "B"; 
 			else if (r == currentRow && c == currentCol)
-				cout << "X"; // Moving character
+				cout << "X"; 
 			else if (grid[r][c] == '#')
-				cout << "#"; // Wall
+				cout << "#"; 
 			else
 				cout << ".";
 		}
